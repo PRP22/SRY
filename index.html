@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Promise to Preya 🐧💖</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Varela+Round&display=swap');
+
+        body {
+            background: #ffeef2;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Varela Round', sans-serif;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        .card {
+            background: white;
+            padding: 35px;
+            border-radius: 40px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(255, 182, 193, 0.6);
+            max-width: 450px;
+            width: 90%;
+            z-index: 10;
+            border: 6px solid #ffcada;
+            position: relative;
+        }
+
+        .gif-container {
+            width: 50%;
+            height: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .main-gif {
+            width: 160px;
+            border-radius: 15px;
+        }
+
+        h1 { color: #ff4d6d; font-family: 'Fredoka One', cursive; font-size: 24px; margin: 10px 0; }
+        p { color: #7c5295; font-size: 16px; line-height: 1.5; margin-bottom: 20px; }
+
+        .btn-wrap { display: flex; justify-content: center; gap: 20px; height: 50px; }
+
+        button {
+            padding: 10px 25px;
+            font-size: 16px;
+            font-family: 'Fredoka One', cursive;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #forgiveBtn { background: #ff758f; color: white; box-shadow: 0 5px 15px rgba(255, 117, 143, 0.4); }
+        #madBtn { background: #e0e0e0; color: #757575; position: absolute; }
+
+        .letter-text {
+            text-align: left;
+            background: #fffafa;
+            padding: 20px;
+            border-radius: 20px;
+            border-left: 5px solid #ff758f;
+            font-size: 15px;
+            color: #444;
+            margin-top: 15px;
+        }
+
+        .hidden { display: none; }
+        .particle { position: fixed; pointer-events: none; z-index: 1; animation: floatUp 3s ease-out forwards; }
+        @keyframes floatUp { 0% { transform: translateY(0) scale(1); opacity: 1; } 100% { transform: translateY(-100vh) scale(0); opacity: 0; } }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div id="askContainer">
+            <div class="gif-container">
+                <!-- <img class="main-gif" src="https://tenor.com/view/cat-cry-cute-sad-kitty-cat-crying-gif-14001460870807495707"> -->
+                <div class="tenor-gif-embed" data-postid="11173804541300596004" data-share-method="host" data-aspect-ratio="1.11888" data-width="100%"><a href="https://tenor.com/view/rabbits-gif-11173804541300596004">Rabbits Sticker</a>from <a href="https://tenor.com/search/rabbits-stickers">Rabbits Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+                <!-- <div class="tenor-gif-embed" data-postid="14001460870807495707" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/cat-cry-cute-sad-kitty-cat-crying-gif-14001460870807495707">Cat Cry Cute GIF</a>from <a href="https://tenor.com/search/cat+cry-gifs">Cat Cry GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script> -->
+            </div>
+            <h1>I'm Sorry, Preya... 🥺</h1>
+            <p>Please don't be mad anymore. Your penguin misses you and wants to give you 2224 hugs! ❄️🐧</p>
+            <p>I realized I went too far with the teasing. Can you please forgive your favorite penguin?</p>
+            <div class="btn-wrap">
+                <button id="forgiveBtn" onclick="showLetter()">Yes, I Forgive You ❤️</button>
+                <button id="madBtn" onmouseover="moveButton()">No, Still Mad 😤</button>
+            </div>
+        </div>
+
+        <div id="letterContainer" class="hidden">
+            <div class="gif-container">
+                <!-- <img class="main-gif" src="https://tenor.com/view/happy-valentines-day-valentines-day-hugs-kisses-happy-heart-day-gif-10137468188332005648"> -->
+                 <div class="tenor-gif-embed" data-postid="10137468188332005648" data-share-method="host" data-aspect-ratio="" data-width="50%"><a href="https://tenor.com/view/happy-valentines-day-valentines-day-hugs-kisses-happy-heart-day-gif-10137468188332005648">Happy Valentines Day Hugs Sticker</a>from <a href="https://tenor.com/search/happy+valentines+day-stickers">Happy Valentines Day Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+            </div>
+            <h1>A Promise to You 💖</h1>
+            <div class="letter-text">
+                Dear Preya,<br><br>
+                I promise <b>not to tease you like that again</b>. I love you more than words can say, and honestly, I just <b>love your existence in my life</b>. You make everything better.<br><br>
+                Now that we're good... <b>Let’s lock in and study hard for a month!</b> Let’s get into our <b>Nirma University</b> together and make our future amazing! 🎓✨
+            </div>
+            <p style="margin-top:15px; font-weight:bold; color:#ff4d6d;">Biggest Hug! 🫂</p>
+        </div>
+    </div>
+
+    <script>
+        function moveButton() {
+            const btn = document.getElementById('madBtn');
+            const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+            btn.style.position = 'fixed';
+            btn.style.left = x + 'px';
+            btn.style.top = y + 'px';
+        }
+
+        function showLetter() {
+            document.getElementById('askContainer').classList.add('hidden');
+            document.getElementById('letterContainer').classList.remove('hidden');
+            setInterval(createHeart, 150);
+        }
+
+        function createHeart() {
+            const p = document.createElement('div');
+            p.className = 'particle';
+            p.innerHTML = '❤️';
+            p.style.left = Math.random() * 100 + 'vw';
+            p.style.top = '100vh';
+            p.style.fontSize = Math.random() * 20 + 20 + 'px';
+            document.body.appendChild(p);
+            setTimeout(() => p.remove(), 3000);
+        }
+    </script>
+</body>
+</html>
