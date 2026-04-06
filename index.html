@@ -135,7 +135,19 @@
             document.getElementById('letterContainer').classList.remove('hidden');
             setInterval(createHeart, 150);
         }
-
+        document.addEventListener('mousemove', function(e) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            // Randomly choose between heart and snowflake
+            particle.innerHTML = Math.random() > 0.5 ? '❤️' : '❄️';
+            particle.style.left = e.pageX + 'px';
+            particle.style.top = e.pageY + 'px';
+            particle.style.fontSize = Math.random() * 20 + 10 + 'px';
+            document.body.appendChild(particle);
+            
+            setTimeout(() => { particle.remove(); }, 2000);
+        });
+        
         function createHeart() {
             const p = document.createElement('div');
             p.className = 'particle';
